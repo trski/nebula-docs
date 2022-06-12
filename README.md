@@ -157,7 +157,7 @@ Response
 
 #### Get Project Users
 
-`POST /v1/rpc/update_user`
+`POST /v1/rpc/get_project_users`
 
 Request
 ```javascript
