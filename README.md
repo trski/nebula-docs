@@ -1,5 +1,31 @@
 # Nebula API
 
+[Headers](#headers)
+
+[Authentication](#authentication)
+
+[RPC API](#rpc-api)
+
+[Routes](#routes)
+* [Users](#users)
+  + [Create user](#create-user)
+  + [Update user](#update-user)
+  + [Get user](#get-user)
+  + [Get users](#get-users)
+  + [Delete user](#delete-user)
+* [Projects](#projects)
+  + [Create project](#create-project)
+  + [Update project](#update-project)
+  + [Get project](#get-project)
+  + [Get projects](#get-projects)
+  + [Get project users](#get-project-users)
+  + [Create project role](#create-project-role)
+  + [Create project user](#create-project-user)
+  + [Delete project user](#delete-project-user)
+  + [Delete project](#delete-project)
+* [Platforms](#platforms)
+  + [Create platform](#create-platform)
+
 ## Headers
 
 ```
@@ -23,7 +49,7 @@ This is reserved for backwards compatibility.
 
 ## Routes
 
-The route documention omits the URL host property.
+The route documentation omits the URL host property.
 
 ### Users
 
