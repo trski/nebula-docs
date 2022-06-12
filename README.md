@@ -12,11 +12,22 @@ Content-Type: application/json
 Basic Auth
 ```
 
+## RPC API
+
+All RPC API calls are HTTP POST requests.
+And all URLs are formatted: `http[s]//:host/:api_version/rpc/:function_name`.
+
+There can be different versions of a function with the same API verision,
+usually denoted by `:function_name_:version`.
+This is reserved for backwards compatibility.
+
 ## Routes
 
-## Users
+The route documention omits the URL host property.
 
-### Create User
+### Users
+
+#### Create User
 
 `POST /v1/rpc/create_user`
 
@@ -30,7 +41,7 @@ Response
 {"status": "success"}
 ```
 
-### Update User
+#### Update User
 
 `POST /v1/rpc/update_user`
 
@@ -44,7 +55,7 @@ Response
 {"status": "success"}
 ```
 
-### Get User
+#### Get User
 
 `POST /v1/rpc/get_user`
 
@@ -58,7 +69,7 @@ Response
 {"status": "success"}
 ```
 
-### Get Users
+#### Get Users
 
 `POST /v1/rpc/get_users`
 
@@ -72,7 +83,7 @@ Response
 {"status": "success"}
 ```
 
-### Delete User
+#### Delete User
 
 `POST /v1/rpc/delete_user`
 
@@ -86,9 +97,9 @@ Response
 {"status": "success"}
 ```
 
-## Projects
+### Projects
 
-### Create Project
+#### Create Project
 
 `POST /v1/rpc/create_project`
 
@@ -102,7 +113,7 @@ Response
 {"status": "success"}
 ```
 
-### Update Project
+#### Update Project
 
 `POST /v1/rpc/update_project`
 
@@ -116,7 +127,7 @@ Response
 {"status": "success"}
 ```
 
-### Get Project
+#### Get Project
 
 `POST /v1/rpc/get_project`
 
@@ -130,7 +141,7 @@ Response
 {"status": "success"}
 ```
 
-### Get Projects
+#### Get Projects
 
 `POST /v1/rpc/get_projects`
 
@@ -144,7 +155,7 @@ Response
 {"status": "success"}
 ```
 
-### Get Project Users
+#### Get Project Users
 
 `POST /v1/rpc/update_user`
 
@@ -158,7 +169,7 @@ Response
 {"status": "success"}
 ```
 
-### Create Project Role
+#### Create Project Role
 
 `POST /v1/rpc/create_project_role`
 
@@ -172,7 +183,7 @@ Response
 {"status": "success"}
 ```
 
-### Create Project User
+#### Create Project User
 
 `POST /v1/rpc/create_project_user`
 
@@ -186,7 +197,7 @@ Response
 {"status": "success"}
 ```
 
-### Delete Project User
+#### Delete Project User
 
 `POST /v1/rpc/delete_project_user`
 
@@ -200,7 +211,7 @@ Response
 {"status": "success"}
 ```
 
-### Delete Project
+#### Delete Project
 
 `POST /v1/rpc/delete_project`
 
@@ -214,9 +225,9 @@ Response
 {"status": "success"}
 ```
 
-## Platforms
+### Platforms
 
-### Create Platform
+#### Create Platform
 
 `POST /v1/rpc/create_platform`
 
@@ -230,7 +241,7 @@ Response
 {"status": "success"}
 ```
 
-### Update Platform
+#### Update Platform
 
 `POST /v1/rpc/update_platform`
 
@@ -244,7 +255,7 @@ Response
 {"status": "success"}
 ```
 
-### Get Platforms
+#### Get Platforms
 
 `POST /v1/rpc/get_platforms`
 
@@ -258,7 +269,7 @@ Response
 {"status": "success"}
 ```
 
-### Delete Platform
+#### Delete Platform
 
 `POST /v1/rpc/delete_platform`
 
@@ -272,9 +283,9 @@ Response
 {"status": "success"}
 ```
 
-## Hosts
+### Hosts
 
-### Update Host
+#### Update Host
 
 `POST /v1/rpc/update_host`
 
@@ -288,7 +299,7 @@ Response
 {"status": "success"}
 ```
 
-### Upsert Hosts
+#### Upsert Hosts
 
 `POST /v1/rpc/upsert_hosts`
 
@@ -302,7 +313,7 @@ Response
 {"status": "success"}
 ```
 
-### Update Host Data
+#### Update Host Data
 
 This is user data for a host.
 
@@ -318,7 +329,7 @@ Response
 {"status": "success"}
 ```
 
-### Filter Hosts
+#### Filter Hosts
 
 `POST /v1/rpc/filter_hosts_v4`
 
@@ -332,7 +343,7 @@ Response
 {"status": "success"}
 ```
 
-### Get Hosts
+#### Get Hosts
 
 `POST /v1/rpc/get_hosts`
 
@@ -346,7 +357,7 @@ Response
 {"status": "success"}
 ```
 
-### Get Host
+#### Get Host
 
 `POST /v1/rpc/get_host`
 
@@ -360,7 +371,7 @@ Response
 {"status": "success"}
 ```
 
-### Delete Host
+#### Delete Host
 
 NOTE: TBA
 
@@ -376,9 +387,9 @@ Response
 {"status": "success"}
 ```
 
-## Host Groups
+### Host Groups
 
-### Get Host Group
+#### Get Host Group
 
 `POST /v1/rpc/get_host_group`
 
@@ -392,7 +403,7 @@ Response
 {"status": "success"}
 ```
 
-### Get Host Group Item Count
+#### Get Host Group Item Count
 
 `POST /v1/rpc/get_host_group_item_count`
 
@@ -406,7 +417,7 @@ Response
 {"status": "success"}
 ```
 
-### Get Host Groups
+#### Get Host Groups
 
 `POST /v1/rpc/get_host_groups`
 
@@ -420,7 +431,7 @@ Response
 {"status": "success"}
 ```
 
-### Get Host Group Items
+#### Get Host Group Items
 
 `POST /v1/rpc/get_host_group_items_v4`
 
@@ -434,7 +445,7 @@ Response
 {"status": "success"}
 ```
 
-### Filter Host Group
+#### Filter Host Group
 
 `POST /v1/rpc/filter_host_group_v4`
 
@@ -448,7 +459,7 @@ Response
 {"status": "success"}
 ```
 
-### Create Host Group Selected
+#### Create Host Group Selected
 
 `POST /v1/rpc/create_host_group_selected`
 
@@ -462,7 +473,7 @@ Response
 {"status": "success"}
 ```
 
-### Create Host Group Item
+#### Create Host Group Item
 
 `POST /v1/rpc/create_host_group_item`
 
@@ -476,7 +487,7 @@ Response
 {"status": "success"}
 ```
 
-### Create Host Group Items
+#### Create Host Group Items
 
 `POST /v1/rpc/create_host_group_items_v2`
 
@@ -490,7 +501,7 @@ Response
 {"status": "success"}
 ```
 
-### Update Host Group
+#### Update Host Group
 
 `POST /v1/rpc/update_host_group`
 
@@ -504,7 +515,7 @@ Response
 {"status": "success"}
 ```
 
-### Get Host Filter
+#### Get Host Filter
 
 `POST /v1/rpc/get_host_filter`
 
@@ -518,7 +529,7 @@ Response
 {"status": "success"}
 ```
 
-### Create Host Group Filtered
+#### Create Host Group Filtered
 
 `POST /v1/rpc/create_host_group_filtered`
 
@@ -532,7 +543,7 @@ Response
 {"status": "success"}
 ```
 
-### Update Host Filter
+#### Update Host Filter
 
 `POST /v1/rpc/update_host_filter`
 
@@ -546,7 +557,7 @@ Response
 {"status": "success"}
 ```
 
-### Delete Host Group Items by Host
+#### Delete Host Group Items by Host
 
 `POST /v1/rpc/delete_host_group_items_by_host`
 
@@ -560,7 +571,7 @@ Response
 {"status": "success"}
 ```
 
-### Delete Host Group Item
+#### Delete Host Group Item
 
 `POST /v1/rpc/delete_host_group_item`
 
@@ -574,7 +585,7 @@ Response
 {"status": "success"}
 ```
 
-### Delete Host Group
+#### Delete Host Group
 
 `POST /v1/rpc/delete_host_group`
 
@@ -588,9 +599,9 @@ Response
 {"status": "success"}
 ```
 
-## Runbooks
+### Runbooks
 
-### Create Runbook
+#### Create Runbook
 
 `POST /v1/rpc/create_runbook`
 
@@ -604,7 +615,7 @@ Response
 {"status": "success"}
 ```
 
-### Update Runbook
+#### Update Runbook
 
 `POST /v1/rpc/update_runbook`
 
@@ -618,7 +629,7 @@ Response
 {"status": "success"}
 ```
 
-### Get Runbooks
+#### Get Runbooks
 
 `POST /v1/rpc/get_runbooks`
 
@@ -632,7 +643,7 @@ Response
 {"status": "success"}
 ```
 
-### Page Runbooks
+#### Page Runbooks
 
 `POST /v1/rpc/page_runbooks`
 
@@ -646,7 +657,7 @@ Response
 {"status": "success"}
 ```
 
-### Get Runbook
+#### Get Runbook
 
 `POST /v1/rpc/get_runbook`
 
@@ -660,7 +671,7 @@ Response
 {"status": "success"}
 ```
 
-### Delete Runbook
+#### Delete Runbook
 
 `POST /v1/rpc/delete_runbook`
 
@@ -674,9 +685,9 @@ Response
 {"status": "success"}
 ```
 
-## Agents
+### Agents
 
-### Get Agents
+#### Get Agents
 
 `POST /v1/rpc/get_agents`
 
@@ -690,9 +701,9 @@ Response
 {"status": "success"}
 ```
 
-## Jobs
+### Jobs
 
-### Get Job
+#### Get Job
 
 `POST /v1/rpc/get_job`
 
@@ -706,7 +717,7 @@ Response
 {"status": "success"}
 ```
 
-### Get Jobs
+#### Get Jobs
 
 `POST /v1/rpc/get_jobs`
 
@@ -720,7 +731,7 @@ Response
 {"status": "success"}
 ```
 
-### Delete Job
+#### Delete Job
 
 `POST /v1/rpc/delete_job`
 
@@ -734,7 +745,7 @@ Response
 {"status": "success"}
 ```
 
-### Get Job Results
+#### Get Job Results
 
 `POST /v1/rpc/get_job_results`
 
@@ -748,7 +759,7 @@ Response
 {"status": "success"}
 ```
 
-### Get Tasks
+#### Get Tasks
 
 `POST /v1/rpc/get_tasks`
 
@@ -762,7 +773,7 @@ Response
 {"status": "success"}
 ```
 
-### Get Work
+#### Get Work
 
 `POST /v1/rpc/get_work`
 
@@ -776,9 +787,9 @@ Response
 {"status": "success"}
 ```
 
-## Cvars
+### Cvars
 
-### Create Cvar
+#### Create Cvar
 
 `POST /v1/rpc/create_cvar`
 
@@ -792,7 +803,7 @@ Response
 {"status": "success"}
 ```
 
-### Update Cvar
+#### Update Cvar
 
 `POST /v1/rpc/update_cvar`
 
@@ -806,7 +817,7 @@ Response
 {"status": "success"}
 ```
 
-### Get Cvars
+#### Get Cvars
 
 `POST /v1/rpc/get_cvars`
 
@@ -820,7 +831,7 @@ Response
 {"status": "success"}
 ```
 
-### Get Cvar
+#### Get Cvar
 
 `POST /v1/rpc/get_cvar`
 
@@ -834,9 +845,9 @@ Response
 {"status": "success"}
 ```
 
-### Delete Cvar
+#### Delete Cvar
 
-`POST /v1/rpc/get_cvar`
+`POST /v1/rpc/delete_cvar`
 
 Request
 ```javascript
@@ -848,9 +859,9 @@ Response
 {"status": "success"}
 ```
 
-## Cron
+### Cron
 
-### Create Job Schedule
+#### Create Job Schedule
 
 `POST /v1/rpc/create_job_schedule`
 
@@ -864,7 +875,7 @@ Response
 {"status": "success"}
 ```
 
-### Update Job Schedule
+#### Update Job Schedule
 
 `POST /v1/rpc/update_job_schedule`
 
@@ -878,7 +889,7 @@ Response
 {"status": "success"}
 ```
 
-### Delete Job Schedule
+#### Delete Job Schedule
 
 `POST /v1/rpc/delete_job_schedule`
 
@@ -892,7 +903,7 @@ Response
 {"status": "success"}
 ```
 
-### Pause Job Schedule
+#### Pause Job Schedule
 
 `POST /v1/rpc/pause_job_schedule`
 
@@ -906,7 +917,7 @@ Response
 {"status": "success"}
 ```
 
-### Resume Job Schedule
+#### Resume Job Schedule
 
 `POST /v1/rpc/resume_job_schedule`
 
@@ -920,7 +931,7 @@ Response
 {"status": "success"}
 ```
 
-### Get User
+#### Get User
 
 `POST /v1/rpc/get_user`
 
