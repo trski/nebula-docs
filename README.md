@@ -41,7 +41,9 @@ Basic Auth
 ## RPC API
 
 All RPC API calls are HTTP POST requests.
-And all URLs are formatted: `http[s]//:host/:api_version/rpc/:function_name`.
+And all URLs have the format:
+
+`http[s]//:host/:api_version/rpc/:function_name`
 
 There can be different versions of a function with the same API verision,
 usually denoted by `:function_name_:version`.
