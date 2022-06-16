@@ -25,6 +25,63 @@
   + [Delete project](#delete-project)
 * [Platforms](#platforms)
   + [Create platform](#create-platform)
+  + [Update platform](#update-platform)
+  + [Get platforms](#get-platforms)
+  + [Delete platform](#delete-platform)
+* [Hosts](#hosts)
+  + [Update host](#update-host)
+  + [Upsert hosts](#upsert-hosts)
+  + [Update host data](#update-host-data)
+  + [Filter hosts](#filter-hosts)
+  + [Get hosts](#get-hosts)
+  + [Get host](#get-host)
+  + [Delete host](#delete-host)
+* [Host Groups](#host-groups)
+  + [Get host group](#get-host-group)
+  + [Get host group item count](#get-host-group-item-count)
+  + [Get host groups](#get-host-groups)
+  + [Get host group items](#get-host-group-items)
+  + [Filter host group](#filter-host-group)
+  + [Create host group selected](#create-host-group-selected)
+  + [Create host group item](#create-host-group-item)
+  + [Create host group items](#create-host-group-items)
+  + [Update host group](#update-host-group)
+  + [Get host filter](#get-host-filter)
+  + [Create host group filtered](#create-host-group-filtered)
+  + [Update host filter](#update-host_filter)
+  + [Delete host group items by host](#delete-host-group-items-by-host)
+  + [Delete host group item](#delete-host-group-item)
+  + [Delete host group](#delete-host-group)
+* [Runbooks](#runbooks)
+  + [Create runbook](#create-runbook)
+  + [Update runbook](#update-runbook)
+  + [Get runbooks](#get-runbooks)
+  + [Page runbooks](#page-runbooks)
+  + [Get runbook](#get-runbook)
+  + [Delete runbook](#delete-runbook)
+* [Jobs](#jobs)
+  + [Create job](#create-job)
+  + [Rerun job](#rerun-job)
+  + [Get job](#get-job)
+  + [Get jobs](#get-jobs)
+  + [Delete job](#delete-job)
+  + [Get job results](#get-job-results)
+  + [Get tasks](#get-tasks)
+  + [Get work](#get-work)
+* [Agents](#agents)
+  + [Get agents](#get-agents)
+* [Cvars](#cvars)
+  + [Create cvar](#create-cvar)
+  + [Update cvar](#update-cvar)
+  + [Get cvars](#get-cvars)
+  + [Get cvar](#get-cvar)
+  + [Delete cvar](#delete-cvar)
+* [Cron](#cron)
+  + [Create job schedule](#create-job-schedule)
+  + [Update job schedule](#update-job-schedule)
+  + [Delete job schedule](#delete-job-schedule)
+  + [Pause job schedule](#pause-job-schedule)
+  + [Resume job schedule](#resume-job-schedule)
 
 ## Headers
 
@@ -731,6 +788,34 @@ Response
 
 ### Jobs
 
+#### Create Job
+
+`POST /v1/rpc/create_job`
+
+Request
+```javascript
+{"foo": "bar"}
+```
+
+Response
+```javascript
+{"status": "success"}
+```
+
+#### Rerun Job
+
+`POST /v1/rpc/rerun_job`
+
+Request
+```javascript
+{"foo": "bar"}
+```
+
+Response
+```javascript
+{"status": "success"}
+```
+
 #### Get Job
 
 `POST /v1/rpc/get_job`
@@ -957,19 +1042,4 @@ Request
 Response
 ```javascript
 {"status": "success"}
-```
-
-#### Get User
-
-`POST /v1/rpc/get_user`
-
-Request
-```javascript
-{"foo": "bar"}
-```
-NOTE: some notes.
-
-Response
-```javascript
-{"foo": "bar"}
 ```
