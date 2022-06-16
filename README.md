@@ -68,8 +68,6 @@
   + [Get job results](#get-job-results)
   + [Get tasks](#get-tasks)
   + [Get work](#get-work)
-* [Agents](#agents)
-  + [Get agents](#get-agents)
 * [Cvars](#cvars)
   + [Create cvar](#create-cvar)
   + [Update cvar](#update-cvar)
@@ -82,6 +80,8 @@
   + [Delete job schedule](#delete-job-schedule)
   + [Pause job schedule](#pause-job-schedule)
   + [Resume job schedule](#resume-job-schedule)
+* [Agents](#agents)
+  + [Get agents](#get-agents)
 
 ## Headers
 
