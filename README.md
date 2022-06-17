@@ -451,7 +451,7 @@ Response
   "data": json,
   "host_locked": boolean,
   "total_hosts": integer
-} ...]
+}, ...]
 ```
 
 #### Get Hosts
