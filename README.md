@@ -406,7 +406,11 @@ This is user data for a host.
 
 Request
 ```javascript
-{"foo": "bar"}
+{
+  "host_id": uuid,
+  "project_id": integer,
+  "data": json
+}
 ```
 
 Response
@@ -420,12 +424,34 @@ Response
 
 Request
 ```javascript
-{"foo": "bar"}
+{
+  "platform_id": integer || array,
+  "project_id": integer,
+  "mfilter": jsonpath, // optional
+  "ufilter": jsonpath, // optional
+  "host_locked": boolean, // optional
+  "limit": integer, // optional
+  "offset": integer // optional
+}
 ```
 
 Response
 ```javascript
-{"status": "success"}
+[{
+  "host_id": uuid,
+  "platform_host_id": text,
+  "host_ip": inet,
+  "host_name": text,
+  "project_id": integer,
+  "platform_id": integer,
+  "metadata": json,
+  "stale": boolean,
+  "created": timestamp,
+  "updated": timestamp,
+  "data": json,
+  "host_locked": boolean,
+  "total_hosts": integer
+} ...]
 ```
 
 #### Get Hosts
