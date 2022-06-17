@@ -346,7 +346,9 @@ Response
 
 Request
 ```javascript
-{"foo": "bar"}
+{
+  "project_id": integer
+}
 ```
 
 Response
