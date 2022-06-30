@@ -56,7 +56,6 @@
   + [Create runbook](#create-runbook)
   + [Update runbook](#update-runbook)
   + [Get runbooks](#get-runbooks)
-  + [Page runbooks](#page-runbooks)
   + [Get runbook](#get-runbook)
   + [Delete runbook](#delete-runbook)
 * [Jobs](#jobs)
@@ -353,7 +352,14 @@ Request
 
 Response
 ```javascript
-{"status": "success"}
+[{
+  "platform_id": integer,
+  "platform_name": text,
+  "project_id": integer,
+  "created": timestamp,
+  "updated": timestamp,
+  "data": json
+}, ...]
 ```
 
 #### Delete Platform
@@ -429,11 +435,11 @@ Request
 {
   "platform_id": integer || array,
   "project_id": integer,
-  "mfilter": jsonpath, // optional
-  "ufilter": jsonpath, // optional
-  "host_locked": boolean, // optional
-  "limit": integer, // optional
-  "offset": integer // optional
+  "mfilter": jsonpath (optional),
+  "ufilter": jsonpath (optional),
+  "host_locked": boolean (optional),
+  "limit": integer (optional),
+  "offset": integer (optional)
 }
 ```
 
@@ -744,30 +750,39 @@ Response
 
 #### Get Runbooks
 
+Returns max 500 runbooks.
+Optionally, page through all
+runbooks using limit
+and offset.
+
 `POST /v1/rpc/get_runbooks`
 
 Request
 ```javascript
-{"foo": "bar"}
+{
+  "project_id": integer,
+  "limit": integer (optional),
+  "offset: integer (optional)
+}
 ```
 
 Response
 ```javascript
-{"status": "success"}
-```
-
-#### Page Runbooks
-
-`POST /v1/rpc/page_runbooks`
-
-Request
-```javascript
-{"foo": "bar"}
-```
-
-Response
-```javascript
-{"status": "success"}
+[{
+  "runbook_id": integer,
+  "runbook_name": text,
+  "template": text,
+  "caption": text,
+  "repo": text,
+  "branch": text,
+  "queue_name": text,
+  "job_type": text,
+  "markdown": text,
+  "project_id": integer,
+  "created": timestamp,
+  "updated": timestamp,
+  "data": json
+}, ...]
 ```
 
 #### Get Runbook
@@ -822,12 +837,21 @@ Response
 
 Request
 ```javascript
-{"foo": "bar"}
+{
+  "runbook_id": integer,
+  "project_id": integer,
+  "queue_name": text (optional),
+  "template": text (optional),
+  "repo": text (optional),
+  "branch": text (optional),
+  "job_type": text (optional),
+  "data": json (optional)
+}
 ```
 
 Response
 ```javascript
-{"status": "success"}
+{"job_id": bigint}
 ```
 
 #### Rerun Job
