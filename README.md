@@ -858,14 +858,20 @@ Response
 
 `POST /v1/rpc/rerun_job`
 
+Reruns a job, creating a new job item,
+returning the new job_id.
+
 Request
 ```javascript
-{"foo": "bar"}
+{
+  "job_id": bigint,
+  "project_id": integer
+}
 ```
 
 Response
 ```javascript
-{"status": "success"}
+{"job_id": bigint}
 ```
 
 #### Get Job
@@ -874,12 +880,31 @@ Response
 
 Request
 ```javascript
-{"foo": "bar"}
+{
+  "job_id": bigint,
+  "project_id": integer
+}
 ```
 
 Response
 ```javascript
-{"status": "success"}
+[{
+  "job_id": bigint,
+  "runbook_id": integer,
+  "project_id": integer,
+  "queue_name": text,
+  "template": text,
+  "repo": text,
+  "branch": text,
+  "job_type": text,
+  "status": text,
+  "handler": text,
+  "started": timestamp,
+  "finished: timestamp,
+  "created": timestamp,
+  "updated": timestamp,
+  "data": json
+}]
 ```
 
 #### Get Jobs
@@ -888,12 +913,32 @@ Response
 
 Request
 ```javascript
-{"foo": "bar"}
+{
+  "project_id": integer,
+  "limit": integer,
+  "offset": integer
+}
 ```
 
 Response
 ```javascript
-{"status": "success"}
+[{
+  "job_id": bigint,
+  "runbook_id": integer,
+  "project_id": integer,
+  "queue_name": text,
+  "template": text,
+  "repo": text,
+  "branch": text,
+  "job_type": text,
+  "status": text,
+  "handler": text,
+  "started": timestamp,
+  "finished: timestamp,
+  "created": timestamp,
+  "updated": timestamp,
+  "data": json
+}, ...]
 ```
 
 #### Delete Job
@@ -902,7 +947,10 @@ Response
 
 Request
 ```javascript
-{"foo": "bar"}
+{
+  "job_id": bigint,
+  "project_id": integer
+}
 ```
 
 Response
@@ -916,12 +964,22 @@ Response
 
 Request
 ```javascript
-{"foo": "bar"}
+{
+  "job_id": bigint,
+  "project_id": integer
+}
 ```
 
 Response
 ```javascript
-{"status": "success"}
+[{
+  "job_result_id": bigint,
+  "job_id": bigint,
+  "project_id": integer,
+  "created": timestamp,
+  "updated": timestamp,
+  "data": json
+}, ...]
 ```
 
 #### Get Tasks
@@ -930,12 +988,26 @@ Response
 
 Request
 ```javascript
-{"foo": "bar"}
+{
+  "job_id": bigint,
+  "project_id": integer
+}
 ```
 
 Response
 ```javascript
-{"status": "success"}
+[{
+  "task_id": bigint,
+  "job_id": bigint,
+  "project_id": integer,
+  "task_name": text,
+  "status" text,
+  "created": timestamp,
+  "started": timestamp,
+  "finished": timestamp,
+  "data": json
+}, ...]
+
 ```
 
 #### Get Work
@@ -960,12 +1032,17 @@ Response
 
 Request
 ```javascript
-{"foo": "bar"}
+{
+  "cvar_name": text,
+  "cvar_value": text,
+  "project_id": integer,
+  "encrypt": bool
+}
 ```
 
 Response
 ```javascript
-{"status": "success"}
+{"cvar_id": integer}
 ```
 
 #### Update Cvar
@@ -974,7 +1051,13 @@ Response
 
 Request
 ```javascript
-{"foo": "bar"}
+{
+  "cvar_id": integer,
+  "project_id": integer,
+  "cvar_name": text,
+  "cvar_value": text,
+  "encrypt": bool
+}
 ```
 
 Response
@@ -988,12 +1071,23 @@ Response
 
 Request
 ```javascript
-{"foo": "bar"}
+{
+  "project_id": integer,
+  "decrypt": bool
+}
 ```
 
 Response
 ```javascript
-{"status": "success"}
+[{
+  "cvar_id": integer,
+  "cvar_name": text,
+  "cvar_value": text,
+  "project_id": integer,
+  "created": timestamp,
+  "updated": timestamp,
+  "data": json
+}, ...]
 ```
 
 #### Get Cvar
@@ -1002,12 +1096,23 @@ Response
 
 Request
 ```javascript
-{"foo": "bar"}
+{
+  "cvar_id": integer,
+  "project_id": integer
+}
 ```
 
 Response
 ```javascript
-{"status": "success"}
+[{
+  "cvar_id": integer,
+  "cvar_name": text,
+  "cvar_value": text,
+  "project_id": integer,
+  "created": timestamp,
+  "updated": timestamp,
+  "data": json
+}]
 ```
 
 #### Delete Cvar
@@ -1016,7 +1121,10 @@ Response
 
 Request
 ```javascript
-{"foo": "bar"}
+{
+  "cvar_id": integer,
+  "project_id": integer
+}
 ```
 
 Response
